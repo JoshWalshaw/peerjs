@@ -6,7 +6,7 @@ name: peerjs-react-native
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
