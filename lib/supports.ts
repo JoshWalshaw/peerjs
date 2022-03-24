@@ -1,4 +1,4 @@
-import { webRTCAdapter } from './adapter';
+// import { webRTCAdapter } from './adapter';
 
 export const Supports = new class {
   readonly isIOS = ['iPad', 'iPhone', 'iPod'].includes(navigator.platform);
@@ -13,6 +13,7 @@ export const Supports = new class {
   }
 
   isBrowserSupported(): boolean {
+
     const browser = this.getBrowser();
     const version = this.getVersion();
 
@@ -28,14 +29,18 @@ export const Supports = new class {
   }
 
   getBrowser(): string {
-    return webRTCAdapter.browserDetails.browser;
+    return 'chrome'
+    // return webRTCAdapter.browserDetails.browser;
   }
 
   getVersion(): number {
-    return webRTCAdapter.browserDetails.version || 0;
+    return this.minChromeVersion;
+    // return webRTCAdapter.browserDetails.version || 0;
   }
 
   isUnifiedPlanSupported(): boolean {
+    return false
+    /*
     const browser = this.getBrowser();
     const version = webRTCAdapter.browserDetails.version || 0;
 
@@ -58,6 +63,7 @@ export const Supports = new class {
     }
 
     return supported;
+    */
   }
 
   toString(): string {
