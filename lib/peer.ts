@@ -66,8 +66,8 @@ export class Peer extends EventEmitter {
   }
 
   /**
-   * @deprecated 
-   * Return type will change from Object to Map<string,[]> 
+   * @deprecated
+   * Return type will change from Object to Map<string,[]>
    */
   get connections(): Object {
     const plainConnections = Object.create(null);
@@ -111,10 +111,13 @@ export class Peer extends EventEmitter {
     };
     this._options = options;
 
+    /* Removed due to window object reference
     // Detect relative URL host.
     if (this._options.host === "/") {
       this._options.host = window.location.hostname;
     }
+    */
+
 
     // Set path correctly.
     if (this._options.path) {
@@ -144,6 +147,7 @@ export class Peer extends EventEmitter {
 
     // Sanity checks
     // Ensure WebRTC supported
+
     if (!util.supports.audioVideo && !util.supports.data) {
       this._delayedAbort(
         PeerErrorType.BrowserIncompatible,

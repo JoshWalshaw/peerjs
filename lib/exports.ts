@@ -8,6 +8,7 @@ export const peerjs = {
 
 export default Peer;
 
-(<any>window).peerjs = peerjs;
-/** @deprecated Should use peerjs namespace */
-(<any>window).Peer = Peer;
+// Removed as React Native doesn't have a window object
+// (<any>window).peerjs = peerjs;
+// /** @deprecated Should use peerjs namespace */
+// (<any>window).Peer = Peer;
