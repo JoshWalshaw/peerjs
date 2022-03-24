@@ -7,6 +7,10 @@ peerjs-react-native is a modified version of [PeerJS](https://github.com/peers/p
 
 ## Setup
 
+**React Native WebRTC**
+
+Ensure that the [react-native-webrtc](https://github.com/react-native-webrtc/react-native-webrtc) package is installed and configured as per their documentation.
+
 
 **Include the library**
 
